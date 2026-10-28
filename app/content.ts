@@ -34,7 +34,16 @@ export const featured = {
   ],
 };
 
-export const projects = [
+// `demo` is a live version under /play (see next.config.ts); cards without
+// one link to the code only.
+export const projects: {
+  name: string;
+  kind: string;
+  summary: string;
+  stack: string[];
+  repo: string;
+  demo?: string;
+}[] = [
   {
     name: "TriagePilot",
     kind: "Tool-calling agent",
@@ -58,6 +67,7 @@ export const projects = [
       "Turns invoices, receipts and CVs (images or PDFs) into clean, schema-validated JSON using a vision model, with inline editing and CSV or JSON export.",
     stack: ["Vision LLM", "Zod", "Next.js"],
     repo: "https://github.com/saxumatrum/extractly",
+    demo: "/play/extractly",
   },
   {
     name: "Chest X-ray classifier",

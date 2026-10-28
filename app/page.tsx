@@ -109,21 +109,30 @@ export default function Home() {
           <SectionTitle>More projects</SectionTitle>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {projects.map((p) => (
-              <a
+              <div
                 key={p.name}
-                href={p.repo}
-                className="group flex flex-col rounded-2xl border border-line bg-card p-6 transition-colors hover:border-foreground/40"
+                className="flex flex-col rounded-2xl border border-line bg-card p-6 transition-colors hover:border-foreground/40"
               >
                 <p className="text-xs uppercase tracking-[0.14em] text-muted">{p.kind}</p>
                 <h3 className="mt-2 font-serif text-2xl">{p.name}</h3>
                 <p className="mt-3 flex-1 text-[15px] leading-relaxed text-muted">{p.summary}</p>
-                <div className="mt-5 flex items-end justify-between gap-3">
+                <div className="mt-5">
                   <Chips items={p.stack} />
-                  <span className="shrink-0 text-sm text-accent">
-                    Code <Arrow />
-                  </span>
                 </div>
-              </a>
+                <div className="mt-5 flex items-center gap-5 text-sm">
+                  {p.demo && (
+                    <a href={p.demo} className="group font-medium text-accent">
+                      Try it live <Arrow />
+                    </a>
+                  )}
+                  <a
+                    href={p.repo}
+                    className={p.demo ? "group text-muted hover:text-foreground" : "group text-accent"}
+                  >
+                    Code <Arrow />
+                  </a>
+                </div>
+              </div>
             ))}
           </div>
         </section>
