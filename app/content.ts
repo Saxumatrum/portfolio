@@ -35,7 +35,7 @@ export const featured = {
 };
 
 // `demo` is a live version under /play (see next.config.ts); cards without
-// one link to the code only.
+// one link to the code only. `image` is a 16:10 screenshot of the demo in use.
 export const projects: {
   name: string;
   kind: string;
@@ -43,6 +43,7 @@ export const projects: {
   stack: string[];
   repo: string;
   demo?: string;
+  image?: { src: string; alt: string };
 }[] = [
   {
     name: "TriagePilot",
@@ -52,6 +53,10 @@ export const projects: {
     stack: ["AI SDK", "Next.js", "TypeScript"],
     repo: "https://github.com/saxumatrum/triagepilot",
     demo: "/play/triagepilot",
+    image: {
+      src: "/work/triagepilot.webp",
+      alt: "TriagePilot: the agent trace, with the classify tool rating an API outage as urgent",
+    },
   },
   {
     name: "docuchat",
@@ -61,6 +66,10 @@ export const projects: {
     stack: ["AI SDK", "Embeddings", "Next.js"],
     repo: "https://github.com/saxumatrum/docuchat",
     demo: "/play/docuchat",
+    image: {
+      src: "/work/docuchat.webp",
+      alt: "docuchat: an answer about annual leave from a sample handbook, with cited source chunks",
+    },
   },
   {
     name: "Extractly",
@@ -70,6 +79,10 @@ export const projects: {
     stack: ["Vision LLM", "Zod", "Next.js"],
     repo: "https://github.com/saxumatrum/extractly",
     demo: "/play/extractly",
+    image: {
+      src: "/work/extractly.webp",
+      alt: "Extractly: fields and line items extracted from a sample invoice, ready to edit and export",
+    },
   },
   {
     name: "Chest X-ray classifier",
