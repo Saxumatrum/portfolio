@@ -92,6 +92,14 @@ export const projects: {
     stack: ["PyTorch", "DenseNet", "Multilabel"],
     repo: "https://github.com/saxumatrum/chest-xray-multilabel",
   },
+  {
+    name: "Facial emotion recognition",
+    kind: "Computer vision",
+    summary:
+      "Reads seven emotions from face images in FER2013. A VGG19 fine-tuned with class-weighted loss reached 68.6% accuracy, against 52.7% for a custom CNN built from scratch.",
+    stack: ["PyTorch", "fastai", "Transfer learning"],
+    repo: "https://github.com/saxumatrum/fer2013",
+  },
 ];
 
 export const experience = [
@@ -100,10 +108,9 @@ export const experience = [
     org: "Rumate",
     period: "Apr 2026 – now",
     points: [
-      "Own data, scoring and ML at a startup that rates Toronto rental buildings, setting the city's inspection results against what tenants and public records say",
-      "Built the Toronto Open Data pipeline: one config entry per city dataset (inspections, permits, investigations, licences), refreshing 3,000+ buildings while keeping their full inspection history",
-      "Built the People's Score pipeline, which gathers reviews, Reddit posts, news, tribunal filings and city investigations for each building, then uses two LLMs (Claude and Qwen) to sort reviews into seven tiers and discount solicited praise. Its first run scored 100 buildings across a city ward",
-      "Built detection for buildings run as rentals outside the city's registry, by cross-referencing rental and condo registries, building permits, public-health records and rental listings",
+      "Own data, scoring and ML at a startup that rates Toronto rental buildings",
+      "Built the Toronto Open Data pipeline that keeps 3,000+ buildings and their inspection history up to date",
+      "Built the People's Score: five public sources per building, with Claude and Qwen classifying reviews to discount solicited praise. Its first run scored 100 buildings across a city ward",
     ],
   },
   {
