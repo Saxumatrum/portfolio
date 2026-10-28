@@ -4,6 +4,7 @@ import type { NextConfig } from "next";
 // basePath, served here under /play/<name> so visitors stay on one domain.
 const demos: Record<string, string> = {
   extractly: "https://extractly-vert.vercel.app",
+  docuchat: "https://docuchat-phi.vercel.app",
 };
 
 const nextConfig: NextConfig = {

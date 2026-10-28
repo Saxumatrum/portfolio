@@ -59,6 +59,7 @@ export const projects: {
       "Upload PDFs, Word docs or notes and ask questions. Answers come only from your documents, with citations to the exact chunk they came from. Hand-rolled chunking, embeddings and cosine retrieval, no vector database.",
     stack: ["AI SDK", "Embeddings", "Next.js"],
     repo: "https://github.com/saxumatrum/docuchat",
+    demo: "/play/docuchat",
   },
   {
     name: "Extractly",
