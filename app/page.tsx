@@ -1,65 +1,208 @@
 import Image from "next/image";
+import { education, experience, featured, profile, projects, skills } from "./content";
+
+function SectionTitle({ id, children }: { id?: string; children: React.ReactNode }) {
+  return (
+    <h2 id={id} className="scroll-mt-24 text-xs font-medium uppercase tracking-[0.18em] text-muted">
+      {children}
+    </h2>
+  );
+}
+
+function Chips({ items }: { items: string[] }) {
+  return (
+    <ul className="flex flex-wrap gap-1.5">
+      {items.map((s) => (
+        <li key={s} className="rounded-full border border-line px-2.5 py-0.5 text-xs text-muted">
+          {s}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function Arrow() {
+  return (
+    <span aria-hidden className="inline-block transition-transform group-hover:translate-x-0.5">
+      →
+    </span>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="mx-auto max-w-3xl px-5 sm:px-8">
+      <header className="flex items-center justify-between py-6">
+        <a href="#top" className="font-serif text-lg">
+          {profile.name}
+        </a>
+        <nav className="flex gap-5 text-sm text-muted">
+          <a href="#work" className="hover:text-foreground">Work</a>
+          <a href="#experience" className="hover:text-foreground">Experience</a>
+          <a href={profile.cv} className="hover:text-foreground">CV</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        {/* Intro */}
+        <section className="pb-20 pt-14 sm:pt-24">
+          <p className="text-sm text-muted">
+            {profile.role} · {profile.location}
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+          <h1 className="mt-4 font-serif text-[2.6rem] leading-[1.05] tracking-tight sm:text-6xl">
+            {profile.headline}
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">{profile.intro}</p>
+          <div className="mt-8 flex flex-wrap gap-3 text-sm">
+            <a
+              href={`mailto:${profile.email}`}
+              className="rounded-full bg-foreground px-5 py-2.5 font-medium text-background hover:opacity-85"
+            >
+              Get in touch
+            </a>
+            <a href={profile.github} className="rounded-full border border-line px-5 py-2.5 hover:border-foreground">
+              GitHub
+            </a>
+            <a href={profile.cv} className="rounded-full border border-line px-5 py-2.5 hover:border-foreground">
+              Download CV
+            </a>
+          </div>
+        </section>
+
+        {/* Featured */}
+        <section className="border-t border-line py-16">
+          <SectionTitle id="work">Featured project</SectionTitle>
+          <div className="mt-8 grid gap-10 sm:grid-cols-[1fr_auto] sm:items-start">
+            <div>
+              <h3 className="font-serif text-4xl">{featured.name}</h3>
+              <p className="mt-2 text-lg">{featured.tagline}</p>
+              <p className="mt-1 text-sm text-accent">{featured.status}</p>
+              <p className="mt-5 leading-relaxed text-muted">{featured.summary}</p>
+              <h4 className="mt-6 text-sm font-medium">What I built</h4>
+              <ul className="mt-2 space-y-2 text-[15px] leading-relaxed text-muted">
+                {featured.built.map((b) => (
+                  <li key={b} className="flex gap-3">
+                    <span aria-hidden className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6">
+                <Chips items={featured.stack} />
+              </div>
+              <a href={featured.url} className="group mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-accent">
+                letsunstuck.com <Arrow />
+              </a>
+            </div>
+          </div>
+          <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-6">
+            {featured.images.map((img) => (
+              <div key={img.src} className="overflow-hidden rounded-2xl border border-line bg-card">
+                <Image src={img.src} alt={img.alt} width={780} height={1688} className="h-auto w-full" />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Projects */}
+        <section className="border-t border-line py-16">
+          <SectionTitle>More projects</SectionTitle>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {projects.map((p) => (
+              <a
+                key={p.name}
+                href={p.repo}
+                className="group flex flex-col rounded-2xl border border-line bg-card p-6 transition-colors hover:border-foreground/40"
+              >
+                <p className="text-xs uppercase tracking-[0.14em] text-muted">{p.kind}</p>
+                <h3 className="mt-2 font-serif text-2xl">{p.name}</h3>
+                <p className="mt-3 flex-1 text-[15px] leading-relaxed text-muted">{p.summary}</p>
+                <div className="mt-5 flex items-end justify-between gap-3">
+                  <Chips items={p.stack} />
+                  <span className="shrink-0 text-sm text-accent">
+                    Code <Arrow />
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        {/* Experience */}
+        <section className="border-t border-line py-16">
+          <SectionTitle id="experience">Experience</SectionTitle>
+          <ol className="mt-8 space-y-10">
+            {experience.map((e) => (
+              <li key={e.role} className="grid gap-2 sm:grid-cols-[9rem_1fr] sm:gap-8">
+                <p className="text-sm text-muted">{e.period}</p>
+                <div>
+                  <h3 className="font-medium">
+                    {e.role} <span className="text-muted">· {e.org}</span>
+                  </h3>
+                  <ul className="mt-3 space-y-2 text-[15px] leading-relaxed text-muted">
+                    {e.points.map((pt) => (
+                      <li key={pt}>{pt}</li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        {/* Education + skills */}
+        <section className="grid gap-12 border-t border-line py-16 sm:grid-cols-2">
+          <div>
+            <SectionTitle>Education</SectionTitle>
+            <ul className="mt-8 space-y-6">
+              {education.map((ed) => (
+                <li key={ed.degree}>
+                  <h3 className="font-medium">{ed.degree}</h3>
+                  <p className="text-sm text-muted">
+                    {ed.org} · {ed.year}
+                  </p>
+                  <p className="mt-2 text-[15px] leading-relaxed text-muted">{ed.note}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <SectionTitle>Skills</SectionTitle>
+            <dl className="mt-8 space-y-5">
+              {skills.map((s) => (
+                <div key={s.group}>
+                  <dt className="font-medium">{s.group}</dt>
+                  <dd className="mt-1 text-[15px] leading-relaxed text-muted">{s.items}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+
+        {/* Contact */}
+        <section className="border-t border-line py-20">
+          <h2 className="font-serif text-4xl leading-tight sm:text-5xl">
+            Hiring for an AI engineer?
+            <br />
+            <span className="italic text-muted">Let&apos;s talk.</span>
+          </h2>
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`mailto:${profile.email}`}
+            className="group mt-8 inline-flex items-center gap-2 text-lg text-accent"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            {profile.email} <Arrow />
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        </section>
       </main>
+
+      <footer className="flex flex-wrap justify-between gap-2 border-t border-line py-8 text-sm text-muted">
+        <span>© {new Date().getFullYear()} {profile.name}</span>
+        <span>
+          <a href={profile.github} className="hover:text-foreground">GitHub</a>
+          {" · "}
+          <a href={profile.cv} className="hover:text-foreground">CV</a>
+        </span>
+      </footer>
     </div>
   );
 }
