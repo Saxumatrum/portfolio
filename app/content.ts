@@ -51,6 +51,7 @@ export const projects: {
       "An agent that triages support tickets step by step: it classifies the ticket, searches a knowledge base, then drafts a reply. Every tool call and result is shown as an inspectable trace.",
     stack: ["AI SDK", "Next.js", "TypeScript"],
     repo: "https://github.com/saxumatrum/triagepilot",
+    demo: "/play/triagepilot",
   },
   {
     name: "docuchat",

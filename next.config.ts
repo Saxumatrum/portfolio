@@ -5,6 +5,7 @@ import type { NextConfig } from "next";
 const demos: Record<string, string> = {
   extractly: "https://extractly-vert.vercel.app",
   docuchat: "https://docuchat-phi.vercel.app",
+  triagepilot: "https://triagepilot-nu.vercel.app",
 };
 
 const nextConfig: NextConfig = {
