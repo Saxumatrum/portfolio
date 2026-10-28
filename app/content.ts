@@ -96,11 +96,22 @@ export const projects: {
 
 export const experience = [
   {
+    role: "CTO",
+    org: "Rumate",
+    period: "Apr 2026 – now",
+    points: [
+      "Own data, scoring and ML at a startup that rates Toronto rental buildings, setting the city's inspection results against what tenants and public records say",
+      "Built the Toronto Open Data pipeline: one config entry per city dataset (inspections, permits, investigations, licences), refreshing 3,000+ buildings while keeping their full inspection history",
+      "Built the People's Score pipeline, which gathers reviews, Reddit posts, news, tribunal filings and city investigations for each building, then uses two LLMs (Claude and Qwen) to sort reviews into seven tiers and discount solicited praise. Its first run scored 100 buildings across a city ward",
+      "Built detection for buildings run as rentals outside the city's registry, by cross-referencing rental and condo registries, building permits, public-health records and rental listings",
+    ],
+  },
+  {
     role: "Senior Software Engineer",
     org: "Nguvu Global",
-    period: "2022 – now",
+    period: "2022 – 2026",
     points: [
-      "Lead the design and deployment of recommendation models that target a base of around 10,000 customers from their transaction data",
+      "Led the design and deployment of recommendation models that target a base of around 10,000 customers from their transaction data",
       "Built the product's first generative AI feature: a customer support chatbot prototype on Anthropic's API",
       "Cut database query times by about 40% by indexing high-traffic queries",
     ],
