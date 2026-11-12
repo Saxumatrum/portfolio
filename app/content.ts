@@ -12,7 +12,45 @@ export const profile = {
   headline: "I build AI products that people actually use.",
   intro:
     "Software engineer with an MSc in Artificial Intelligence (Distinction). Since 2019 I've shipped production software, from recommendation models on live customer data to LLM apps with retrieval, tool-calling agents and structured extraction.",
+  // Shown as a badge on the home page and on /services.
+  availability: "Open to roles and freelance projects · remote, worldwide",
 };
+
+// Freelance offer on /services. `proof` names a project on the Work page that
+// shows the service working; keep every line backed by something real.
+export const services = [
+  {
+    title: "Chat with your documents",
+    pitch:
+      "An assistant that answers questions from your own policies, manuals or contracts, and shows the exact passage each answer came from, so your team can check it.",
+    proof: { name: "docuchat", href: "/play/docuchat" },
+  },
+  {
+    title: "Automate data entry",
+    pitch:
+      "Turn invoices, receipts, CVs or forms into clean, checked data you can drop into a spreadsheet or your own system, instead of typing it in by hand.",
+    proof: { name: "Extractly", href: "/play/extractly" },
+  },
+  {
+    title: "AI support triage",
+    pitch:
+      "Sort incoming support tickets by urgency, find the right help article and draft a reply for a person to approve, with every step visible.",
+    proof: { name: "TriagePilot", href: "/play/triagepilot" },
+  },
+  {
+    title: "Build your AI product",
+    pitch:
+      "Take an idea to a live app with accounts, a database, notifications and AI at the core, then hand it over in a state you can keep running.",
+    proof: { name: "Unstuck", href: "/work#unstuck" },
+  },
+];
+
+export const steps = [
+  { step: "Call", text: "A free call about what you need. I'll tell you honestly if AI is the right fit." },
+  { step: "Scope", text: "A short written plan: what gets built, how long it takes, what it costs." },
+  { step: "Build", text: "Working versions you can try as I go, not one big reveal at the end." },
+  { step: "Hand over", text: "Your code, your accounts, and clear notes on how to run it." },
+];
 
 export const featured = {
   name: "Unstuck",
@@ -34,11 +72,14 @@ export const featured = {
   ],
 };
 
-// `demo` is a live version under /play (see next.config.ts); cards without
-// one link to the code only. `image` is a 16:10 screenshot of the demo in use.
+// `demo` is a live version under /play (see next.config.ts) and gets a full
+// card on /work; projects without one are listed under "Research & ML".
+// `image` is a 16:10 screenshot of the demo in use. `forBusiness` is the
+// plain-English line for clients, shown above the technical summary.
 export const projects: {
   name: string;
   kind: string;
+  forBusiness?: string;
   summary: string;
   stack: string[];
   repo: string;
@@ -48,6 +89,7 @@ export const projects: {
   {
     name: "TriagePilot",
     kind: "Tool-calling agent",
+    forBusiness: "Sorts your support inbox and drafts replies for your team to approve.",
     summary:
       "An agent that triages support tickets step by step: it classifies the ticket, searches a knowledge base, then drafts a reply. Every tool call and result is shown as an inspectable trace.",
     stack: ["AI SDK", "Next.js", "TypeScript"],
@@ -61,6 +103,7 @@ export const projects: {
   {
     name: "docuchat",
     kind: "RAG",
+    forBusiness: "Lets your staff get answers from your own documents in seconds, with sources.",
     summary:
       "Upload PDFs, Word docs or notes and ask questions. Answers come only from your documents, with citations to the exact chunk they came from. Hand-rolled chunking, embeddings and cosine retrieval, no vector database.",
     stack: ["AI SDK", "Embeddings", "Next.js"],
@@ -74,6 +117,7 @@ export const projects: {
   {
     name: "Extractly",
     kind: "Structured extraction",
+    forBusiness: "Turns piles of invoices and forms into spreadsheet-ready data, no retyping.",
     summary:
       "Turns invoices, receipts and CVs (images or PDFs) into clean, schema-validated JSON using a vision model, with inline editing and CSV or JSON export.",
     stack: ["Vision LLM", "Zod", "Next.js"],
