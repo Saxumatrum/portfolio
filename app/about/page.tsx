@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { education, experience, profile, skills } from "../content";
 import { ContactCta, PageIntro, SectionTitle } from "../ui";
+import { AboutMotif } from "../art";
 
 export const metadata: Metadata = {
   title: "About — Adjetei Martey",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <>
-      <PageIntro title="About">{profile.intro}</PageIntro>
+      <PageIntro title="About" art={<AboutMotif className="h-full w-full" />}>{profile.intro}</PageIntro>
 
       <section className="border-t border-line py-16">
         <SectionTitle>Experience</SectionTitle>

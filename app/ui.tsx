@@ -6,11 +6,22 @@ export function SectionTitle({ children }: { children: React.ReactNode }) {
   return <h2 className="text-xs font-medium uppercase tracking-[0.18em] text-muted">{children}</h2>;
 }
 
-export function PageIntro({ title, children }: { title: string; children: React.ReactNode }) {
+export function PageIntro({
+  title,
+  art,
+  children,
+}: {
+  title: string;
+  art?: React.ReactNode;
+  children: React.ReactNode;
+}) {
   return (
-    <section className="pb-14 pt-14 sm:pt-20">
-      <h1 className="font-serif text-[2.6rem] leading-[1.05] tracking-tight sm:text-5xl">{title}</h1>
-      <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">{children}</p>
+    <section className="flex items-center justify-between gap-8 pb-14 pt-14 sm:pt-20">
+      <div>
+        <h1 className="font-serif text-[2.6rem] leading-[1.05] tracking-tight sm:text-5xl">{title}</h1>
+        <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">{children}</p>
+      </div>
+      {art && <div className="hidden h-28 w-28 shrink-0 sm:block">{art}</div>}
     </section>
   );
 }
@@ -120,7 +131,7 @@ export function AvailabilityBadge() {
 
 export function ContactCta() {
   return (
-    <section className="border-t border-line py-20">
+    <section className="my-16 rounded-3xl bg-sand px-6 py-14 sm:px-12">
       <h2 className="font-serif text-4xl leading-tight sm:text-5xl">
         Hiring, or have a project in mind?
         <br />

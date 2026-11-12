@@ -10,6 +10,7 @@ import {
   SectionTitle,
   UnstuckImages,
 } from "../ui";
+import { WorkMotif } from "../art";
 
 export const metadata: Metadata = {
   title: "Work — Adjetei Martey",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 export default function Work() {
   return (
     <>
-      <PageIntro title="Work">
+      <PageIntro title="Work" art={<WorkMotif className="h-full w-full" />}>
         One product in beta, three LLM apps you can try right here, and the computer vision projects behind them.
       </PageIntro>
 

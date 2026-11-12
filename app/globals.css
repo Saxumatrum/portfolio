@@ -1,22 +1,36 @@
 @import "tailwindcss";
 
+/* Warm palette: cream paper, ink-brown text, terracotta accent. The art-*
+   tones are only for illustrations and soft fills, never body text. */
 :root {
-  --background: #fafaf7;
-  --foreground: #16161a;
-  --muted: #5c5c66;
-  --line: #e4e4dd;
-  --card: #ffffff;
-  --accent: #1f4fd8;
+  --background: #fbf5ec;
+  --foreground: #2b1d16;
+  --muted: #74625a;
+  --line: #ead9c6;
+  --card: #fffaf3;
+  --accent: #b9481f;
+  --art-sun: #f0a63a;
+  --art-rose: #e8846a;
+  --art-clay: #c65a32;
+  --art-sage: #8f9d6c;
+  --art-plum: #6e3b4e;
+  --art-sand: #f3dcc0;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #111113;
-    --foreground: #ededea;
-    --muted: #9a9aa3;
-    --line: #2a2a2f;
-    --card: #18181b;
-    --accent: #7c9bff;
+    --background: #1a1310;
+    --foreground: #f4e9dd;
+    --muted: #b6a395;
+    --line: #3a2b23;
+    --card: #231a15;
+    --accent: #f08f60;
+    --art-sun: #e9a13f;
+    --art-rose: #d9765c;
+    --art-clay: #b4532e;
+    --art-sage: #7e8c5e;
+    --art-plum: #b77a92;
+    --art-sand: #3a2a20;
   }
 }
 
@@ -27,6 +41,12 @@
   --color-line: var(--line);
   --color-card: var(--card);
   --color-accent: var(--accent);
+  --color-sun: var(--art-sun);
+  --color-rose: var(--art-rose);
+  --color-clay: var(--art-clay);
+  --color-sage: var(--art-sage);
+  --color-plum: var(--art-plum);
+  --color-sand: var(--art-sand);
   --font-sans: var(--font-inter);
   --font-serif: var(--font-newsreader);
 }
@@ -42,6 +62,23 @@ body {
 }
 
 ::selection {
-  background: var(--accent);
-  color: #fff;
+  background: var(--art-sun);
+  color: #2b1d16;
+}
+
+/* Slow drift for illustration pieces. */
+@keyframes drift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.drift { animation: drift 7s ease-in-out infinite; transform-box: fill-box; }
+.drift-slow { animation: drift 11s ease-in-out infinite; transform-box: fill-box; }
+@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.twinkle { animation: twinkle 4s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .drift, .drift-slow, .twinkle { animation: none; }
 }

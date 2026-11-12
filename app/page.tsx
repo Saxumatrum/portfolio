@@ -1,98 +1,81 @@
 import Link from "next/link";
-import { experience, featured, profile, projects, services } from "./content";
-import { Arrow, AvailabilityBadge, ContactCta, MoreLink, ProjectCard, SectionTitle } from "./ui";
+import { AboutMotif, HeroArt, ServicesMotif, WorkMotif } from "./art";
+import { experience, featured, profile, projects } from "./content";
+import { Arrow, AvailabilityBadge } from "./ui";
 
+// Home is a front door: who I am, then three ways in. Detail lives on the
+// other pages so this one never turns into a long scroll.
 export default function Home() {
-  const live = projects.filter((p) => p.demo);
+  const demos = projects.filter((p) => p.demo).length;
   const now = experience[0];
+
+  const doors = [
+    {
+      href: "/work",
+      title: "Work",
+      text: `${featured.name} plus ${demos} AI apps you can try live in your browser.`,
+      Motif: WorkMotif,
+      tint: "bg-sun/15",
+    },
+    {
+      href: "/services",
+      title: "Services",
+      text: "Document assistants, automated data entry, support triage and full AI products for your business.",
+      Motif: ServicesMotif,
+      tint: "bg-rose/15",
+    },
+    {
+      href: "/about",
+      title: "About",
+      text: `${now.role} at ${now.org}. Before that, seven years shipping production software. MSc AI, Distinction.`,
+      Motif: AboutMotif,
+      tint: "bg-sage/15",
+    },
+  ];
 
   return (
     <>
-      {/* Intro */}
-      <section className="pb-20 pt-14 sm:pt-24">
-        <AvailabilityBadge />
-        <p className="mt-6 text-sm text-muted">
-          {profile.role} · {profile.location}
-        </p>
-        <h1 className="mt-4 font-serif text-[2.6rem] leading-[1.05] tracking-tight sm:text-6xl">
-          {profile.headline}
-        </h1>
-        <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">{profile.intro}</p>
-        <div className="mt-8 flex flex-wrap gap-3 text-sm">
-          <a
-            href={`mailto:${profile.email}`}
-            className="rounded-full bg-foreground px-5 py-2.5 font-medium text-background hover:opacity-85"
-          >
-            Get in touch
-          </a>
-          <Link href="/services" className="rounded-full border border-line px-5 py-2.5 hover:border-foreground">
-            Work with me
-          </Link>
-          <a href={profile.cv} className="rounded-full border border-line px-5 py-2.5 hover:border-foreground">
-            Download CV
-          </a>
-        </div>
-      </section>
-
-      {/* Featured, short version: the full write-up is on /work */}
-      <section className="border-t border-line py-16">
-        <SectionTitle>Featured project</SectionTitle>
-        <Link
-          href="/work#unstuck"
-          className="group mt-8 block rounded-2xl border border-line bg-card p-6 transition-colors hover:border-foreground/40 sm:p-8"
-        >
-          <p className="text-sm text-accent">{featured.status}</p>
-          <h3 className="mt-2 font-serif text-4xl">{featured.name}</h3>
-          <p className="mt-2 text-lg">{featured.tagline}</p>
-          <p className="mt-4 max-w-xl leading-relaxed text-muted">{featured.summary}</p>
-          <p className="mt-6 text-sm font-medium text-accent">
-            How it works <Arrow />
+      <section className="grid items-center gap-10 pb-16 pt-10 sm:pt-16 md:grid-cols-[1.15fr_1fr]">
+        <div>
+          <AvailabilityBadge />
+          <p className="mt-6 text-sm text-muted">
+            {profile.role} · {profile.location}
           </p>
-        </Link>
+          <h1 className="mt-3 font-serif text-[2.6rem] leading-[1.05] tracking-tight sm:text-6xl">
+            I build AI products that people <span className="italic text-accent">actually use.</span>
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">{profile.intro}</p>
+          <div className="mt-8 flex flex-wrap gap-3 text-sm">
+            <a
+              href={`mailto:${profile.email}`}
+              className="rounded-full bg-accent px-5 py-2.5 font-medium text-white hover:opacity-90"
+            >
+              Get in touch
+            </a>
+            <Link href="/services" className="rounded-full border border-line bg-card px-5 py-2.5 hover:border-accent">
+              Work with me
+            </Link>
+          </div>
+        </div>
+        <HeroArt className="mx-auto w-full max-w-[22rem] md:max-w-none" />
       </section>
 
-      {/* Live demos */}
-      <section className="border-t border-line py-16">
-        <div className="flex items-baseline justify-between gap-4">
-          <SectionTitle>Try them live</SectionTitle>
-          <MoreLink href="/work">All projects</MoreLink>
-        </div>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          {live.map((p) => (
-            <ProjectCard key={p.name} p={p} />
-          ))}
-        </div>
+      <section className="grid gap-4 pb-20 sm:grid-cols-3">
+        {doors.map(({ href, title, text, Motif, tint }) => (
+          <Link
+            key={href}
+            href={href}
+            className={`group flex flex-col rounded-3xl border border-line ${tint} p-6 transition hover:-translate-y-0.5 hover:border-accent/50`}
+          >
+            <Motif className="h-16 w-16" />
+            <h2 className="mt-5 font-serif text-3xl">{title}</h2>
+            <p className="mt-2 flex-1 text-[15px] leading-relaxed text-muted">{text}</p>
+            <p className="mt-5 text-sm font-medium text-accent">
+              Open <Arrow />
+            </p>
+          </Link>
+        ))}
       </section>
-
-      {/* Services teaser for freelance clients */}
-      <section className="border-t border-line py-16">
-        <div className="flex items-baseline justify-between gap-4">
-          <SectionTitle>For businesses</SectionTitle>
-          <MoreLink href="/services">Services</MoreLink>
-        </div>
-        <ul className="mt-8 grid gap-x-8 gap-y-5 sm:grid-cols-2">
-          {services.map((s) => (
-            <li key={s.title}>
-              <h3 className="font-medium">{s.title}</h3>
-              <p className="mt-1 text-[15px] leading-relaxed text-muted">{s.pitch}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {/* Now */}
-      <section className="border-t border-line py-16">
-        <SectionTitle>Now</SectionTitle>
-        <p className="mt-6 text-lg">
-          {now.role} at {now.org} <span className="text-muted">· {now.period}</span>
-        </p>
-        <p className="mt-2 max-w-xl leading-relaxed text-muted">{now.points[0]}.</p>
-        <div className="mt-6">
-          <MoreLink href="/about">Experience, education and skills</MoreLink>
-        </div>
-      </section>
-
-      <ContactCta />
     </>
   );
 }

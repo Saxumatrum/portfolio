@@ -30,23 +30,23 @@ export default async function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "80px 88px",
-          background: "#FAFAF7",
-          color: "#16161A",
+          background: "#FBF5EC",
+          color: "#2B1D16",
           fontFamily: "Inter",
         }}
       >
-        <div style={{ display: "flex", fontSize: 28, color: "#5C5C66" }}>
+        <div style={{ display: "flex", fontSize: 28, color: "#74625A" }}>
           {profile.role} · {profile.location}
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontFamily: "Newsreader", fontSize: 104, lineHeight: 1, letterSpacing: "-0.02em" }}>
             {profile.name}
           </div>
-          <div style={{ marginTop: 28, fontSize: 38, color: "#5C5C66" }}>{profile.headline}</div>
+          <div style={{ marginTop: 28, fontSize: 38, color: "#74625A" }}>{profile.headline}</div>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 28 }}>
-          <div style={{ color: "#1F4FD8" }}>adjetei-martey.vercel.app</div>
-          <div style={{ display: "flex", gap: 14, color: "#5C5C66" }}>
+          <div style={{ color: "#B9481F" }}>adjetei-martey.vercel.app</div>
+          <div style={{ display: "flex", gap: 14, color: "#74625A" }}>
             <span>LLM apps</span>
             <span>·</span>
             <span>RAG</span>

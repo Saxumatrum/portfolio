@@ -17,7 +17,7 @@ export function SiteHeader() {
       <Link href="/" className="font-serif text-lg">
         {profile.name}
       </Link>
-      <nav className="flex gap-5 text-sm text-muted">
+      <nav className="flex gap-4 text-sm text-muted sm:gap-5">
         {links.map((l) => {
           const active = path === l.href || path.startsWith(`${l.href}/`);
           return (

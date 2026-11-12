@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { profile, services, steps } from "../content";
 import { Arrow, AvailabilityBadge, ContactCta, SectionTitle } from "../ui";
+import { ServicesMotif } from "../art";
 
 export const metadata: Metadata = {
   title: "Services — Adjetei Martey",
@@ -12,7 +13,8 @@ export const metadata: Metadata = {
 export default function Services() {
   return (
     <>
-      <section className="pb-14 pt-14 sm:pt-20">
+      <section className="relative pb-14 pt-14 sm:pt-20">
+        <ServicesMotif className="absolute right-0 top-14 hidden h-28 w-28 sm:block" />
         <AvailabilityBadge />
         <h1 className="mt-6 font-serif text-[2.6rem] leading-[1.05] tracking-tight sm:text-5xl">
           AI that does real work for your business.
@@ -23,7 +25,7 @@ export default function Services() {
         </p>
         <a
           href={`mailto:${profile.email}?subject=Project enquiry`}
-          className="mt-8 inline-block rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background hover:opacity-85"
+          className="mt-8 inline-block rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white hover:opacity-90"
         >
           Tell me about your project
         </a>
@@ -49,7 +51,9 @@ export default function Services() {
         <ol className="mt-8 grid gap-6 sm:grid-cols-4">
           {steps.map((p, i) => (
             <li key={p.step}>
-              <p className="font-serif text-3xl text-muted">{i + 1}</p>
+              <p className="flex h-10 w-10 items-center justify-center rounded-full bg-sun/25 font-serif text-xl text-accent">
+                {i + 1}
+              </p>
               <h3 className="mt-2 font-medium">{p.step}</h3>
               <p className="mt-1 text-[15px] leading-relaxed text-muted">{p.text}</p>
             </li>

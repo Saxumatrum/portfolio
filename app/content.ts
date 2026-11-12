@@ -13,7 +13,7 @@ export const profile = {
   intro:
     "Software engineer with an MSc in Artificial Intelligence (Distinction). Since 2019 I've shipped production software, from recommendation models on live customer data to LLM apps with retrieval, tool-calling agents and structured extraction.",
   // Shown as a badge on the home page and on /services.
-  availability: "Open to roles and freelance projects · remote, worldwide",
+  availability: "Open to roles & freelance · remote, worldwide",
 };
 
 // Freelance offer on /services. `proof` names a project on the Work page that
