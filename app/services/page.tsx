@@ -7,7 +7,7 @@ import { ServicesMotif } from "../art";
 export const metadata: Metadata = {
   title: "Services — Adjetei Martey",
   description:
-    "Freelance AI development: document assistants, automated data entry, support triage and full AI products. Remote, worldwide.",
+    "Freelance AI development: booking and enquiry assistants, document assistants, automated data entry, support triage and full AI products. Remote, worldwide.",
 };
 
 export default function Services() {

@@ -20,7 +20,7 @@ export default function Home() {
     {
       href: "/services",
       title: "Services",
-      text: "Document assistants, automated data entry, support triage and full AI products for your business.",
+      text: "Booking assistants, document assistants, automated data entry and full AI products for your business.",
       Motif: ServicesMotif,
       tint: "bg-rose/15",
     },

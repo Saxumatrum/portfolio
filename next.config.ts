@@ -6,6 +6,7 @@ const demos: Record<string, string> = {
   extractly: "https://extractly-vert.vercel.app",
   docuchat: "https://docuchat-phi.vercel.app",
   triagepilot: "https://triagepilot-nu.vercel.app",
+  frontdesk: "https://frontdesk-sand-xi.vercel.app",
 };
 
 const nextConfig: NextConfig = {

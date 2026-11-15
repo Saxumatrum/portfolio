@@ -20,6 +20,12 @@ export const profile = {
 // shows the service working; keep every line backed by something real.
 export const services = [
   {
+    title: "Bookings and enquiries on autopilot",
+    pitch:
+      "A host on your website or WhatsApp that answers menu, price and opening-hours questions, books tables or appointments into your diary, and passes anything unusual to you with a one-line summary.",
+    proof: { name: "FrontDesk", href: "/play/frontdesk" },
+  },
+  {
     title: "Chat with your documents",
     pitch:
       "An assistant that answers questions from your own policies, manuals or contracts, and shows the exact passage each answer came from, so your team can check it.",
@@ -86,6 +92,20 @@ export const projects: {
   demo?: string;
   image?: { src: string; alt: string };
 }[] = [
+  {
+    name: "FrontDesk",
+    kind: "Booking agent",
+    forBusiness: "Answers your guests' questions and takes bookings day and night, and hands the tricky ones to you.",
+    summary:
+      "An AI host for a demo restaurant. It looks up the menu and allergens, checks free tables, books only after the guest confirms, and hands big groups, private hire and complaints to staff. The owner's view shows bookings, hand-offs and every tool call.",
+    stack: ["AI SDK", "Tool calling", "Next.js"],
+    repo: "https://github.com/saxumatrum/frontdesk",
+    demo: "/play/frontdesk",
+    image: {
+      src: "/work/frontdesk.webp",
+      alt: "FrontDesk: a guest books a table for six with a nut allergy noted, and the booking appears in the owner's view",
+    },
+  },
   {
     name: "TriagePilot",
     kind: "Tool-calling agent",
