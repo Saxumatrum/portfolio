@@ -7,6 +7,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["", 1],
     ["/services", 0.9],
     ["/restaurant-booking-assistant", 0.9],
+    ["/salon-clinic-booking-assistant", 0.9],
+    ["/automate-invoice-data-entry", 0.9],
     ["/work", 0.8],
     ["/about", 0.6],
     ["/play/frontdesk", 0.7],

@@ -42,11 +42,12 @@ export default function Services() {
               <Link href={s.proof.href} className="group mt-5 text-sm font-medium text-accent">
                 See it working: {s.proof.name} <Arrow />
               </Link>
-              {"more" in s && s.more && (
-                <Link href={s.more.href} className="group mt-2 text-sm font-medium text-accent">
-                  {s.more.name} <Arrow />
-                </Link>
-              )}
+              {"more" in s &&
+                s.more?.map((m) => (
+                  <Link key={m.href} href={m.href} className="group mt-2 text-sm font-medium text-accent">
+                    {m.name} <Arrow />
+                  </Link>
+                ))}
             </div>
           ))}
         </div>

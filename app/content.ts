@@ -24,7 +24,10 @@ export const services = [
     pitch:
       "A host on your website or WhatsApp that answers menu, price and opening-hours questions, books tables or appointments into your diary, and passes anything unusual to you with a one-line summary.",
     proof: { name: "FrontDesk", href: "/play/frontdesk" },
-    more: { name: "AI booking assistant for restaurants", href: "/restaurant-booking-assistant" },
+    more: [
+      { name: "For restaurants", href: "/restaurant-booking-assistant" },
+      { name: "For salons and clinics", href: "/salon-clinic-booking-assistant" },
+    ],
   },
   {
     title: "Chat with your documents",
@@ -37,6 +40,7 @@ export const services = [
     pitch:
       "Turn invoices, receipts, CVs or forms into clean, checked data you can drop into a spreadsheet or your own system, instead of typing it in by hand.",
     proof: { name: "Extractly", href: "/play/extractly" },
+    more: [{ name: "Invoices and receipts", href: "/automate-invoice-data-entry" }],
   },
   {
     title: "AI support triage",
