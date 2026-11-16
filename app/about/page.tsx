@@ -4,7 +4,8 @@ import { ContactCta, PageIntro, SectionTitle } from "../ui";
 import { AboutMotif } from "../art";
 
 export const metadata: Metadata = {
-  title: "About — Adjetei Martey",
+  title: "About — Adjetei Martey, AI Engineer",
+  alternates: { canonical: "/about" },
   description: "Experience, education and skills: CTO at Rumate, software engineer at Nguvu Global (2019–2026), MSc AI (Distinction).",
 };
 

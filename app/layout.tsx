@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Newsreader } from "next/font/google";
 import "./globals.css";
-import { profile } from "./content";
+import { profile, services } from "./content";
 import { SiteHeader } from "./nav";
 
 const inter = Inter({
@@ -15,12 +15,15 @@ const newsreader = Newsreader({
   style: ["normal", "italic"],
 });
 
+const SITE = "https://adjetei-martey.vercel.app";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://adjetei-martey.vercel.app"),
-  title: "Adjetei Martey — AI Engineer",
+  title: "Adjetei Martey — Freelance AI Developer, UK and Remote",
   description:
-    "Software engineer in London with an MSc in AI. I build LLM products and production ML systems.",
-  openGraph: { type: "website", url: "/" },
+    "Freelance AI developer (MSc AI) based in London, working with businesses across the UK and worldwide. Booking and enquiry assistants, chat-with-your-documents, automated data entry and custom AI products. Live demos you can try.",
+  alternates: { canonical: "/" },
+  openGraph: { type: "website", url: "/", siteName: "Adjetei Martey", locale: "en_GB" },
   twitter: { card: "summary_large_image" },
 };
 
@@ -29,9 +32,47 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Structured data so search engines know who this is, where, and what's offered.
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${SITE}/#person`,
+        name: profile.name,
+        jobTitle: "AI Engineer",
+        url: SITE,
+        email: `mailto:${profile.email}`,
+        address: { "@type": "PostalAddress", addressLocality: "London", addressCountry: "GB" },
+        alumniOf: { "@type": "CollegeOrUniversity", name: "University of Kent" },
+        knowsAbout: ["Artificial intelligence", "Large language models", "AI agents", "Machine learning", "Next.js", "Python"],
+        sameAs: [profile.github],
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": `${SITE}/#service`,
+        name: "Adjetei Martey — Freelance AI Development",
+        url: `${SITE}/services`,
+        founder: { "@id": `${SITE}/#person` },
+        email: profile.email,
+        address: { "@type": "PostalAddress", addressLocality: "London", addressCountry: "GB" },
+        areaServed: [{ "@type": "Country", name: "United Kingdom" }, "Worldwide"],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "AI services",
+          itemListElement: services.map((s) => ({
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: s.title, description: s.pitch },
+          })),
+        },
+      },
+    ],
+  };
+
   return (
     <html lang="en">
       <body className={`${inter.variable} ${newsreader.variable} antialiased`}>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <SiteHeader />
           <main>{children}</main>

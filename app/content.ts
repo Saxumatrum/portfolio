@@ -24,6 +24,7 @@ export const services = [
     pitch:
       "A host on your website or WhatsApp that answers menu, price and opening-hours questions, books tables or appointments into your diary, and passes anything unusual to you with a one-line summary.",
     proof: { name: "FrontDesk", href: "/play/frontdesk" },
+    more: { name: "AI booking assistant for restaurants", href: "/restaurant-booking-assistant" },
   },
   {
     title: "Chat with your documents",

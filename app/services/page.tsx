@@ -5,9 +5,10 @@ import { Arrow, AvailabilityBadge, ContactCta, SectionTitle } from "../ui";
 import { ServicesMotif } from "../art";
 
 export const metadata: Metadata = {
-  title: "Services — Adjetei Martey",
+  title: "AI Services for Small Businesses — Adjetei Martey",
   description:
-    "Freelance AI development: booking and enquiry assistants, document assistants, automated data entry, support triage and full AI products. Remote, worldwide.",
+    "Freelance AI development for businesses in the UK and worldwide: booking and enquiry assistants for restaurants, salons and clinics, chat-with-your-documents, automated data entry, support triage and custom AI apps. Free call to start.",
+  alternates: { canonical: "/services" },
 };
 
 export default function Services() {
@@ -41,6 +42,11 @@ export default function Services() {
               <Link href={s.proof.href} className="group mt-5 text-sm font-medium text-accent">
                 See it working: {s.proof.name} <Arrow />
               </Link>
+              {"more" in s && s.more && (
+                <Link href={s.more.href} className="group mt-2 text-sm font-medium text-accent">
+                  {s.more.name} <Arrow />
+                </Link>
+              )}
             </div>
           ))}
         </div>

@@ -13,7 +13,8 @@ import {
 import { WorkMotif } from "../art";
 
 export const metadata: Metadata = {
-  title: "Work — Adjetei Martey",
+  title: "AI Projects and Live Demos — Adjetei Martey",
+  alternates: { canonical: "/work" },
   description: "Unstuck, live LLM demos (agents, RAG, structured extraction) and computer vision projects.",
 };
 
