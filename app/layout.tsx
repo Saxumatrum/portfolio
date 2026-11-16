@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   description:
     "Freelance AI developer (MSc AI) based in London, working with businesses across the UK and worldwide. Booking and enquiry assistants, chat-with-your-documents, automated data entry and custom AI products. Live demos you can try.",
   alternates: { canonical: "/" },
+  verification: { google: "wkxFf1V5pUDHT69Ic93KtjsTPeXyX-uoFXWEQ39bdsI" },
   openGraph: { type: "website", url: "/", siteName: "Adjetei Martey", locale: "en_GB" },
   twitter: { card: "summary_large_image" },
 };
