@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { AboutMotif, HeroArt, ServicesMotif, WorkMotif } from "./art";
-import { experience, featured, profile, projects } from "./content";
+import { experience, featured, pitch, profile, projects } from "./content";
 import { Arrow, AvailabilityBadge } from "./ui";
 
 // Home is a front door: who I am, then three ways in. Detail lives on the
@@ -41,21 +41,28 @@ export default function Home() {
           <p className="mt-6 text-sm text-muted">
             {profile.role} · {profile.location}
           </p>
-          <h1 className="mt-3 font-serif text-[2.6rem] leading-[1.05] tracking-tight sm:text-6xl">
-            I build AI products that people <span className="italic text-accent">actually use.</span>
+          <h1 className="mt-3 font-serif text-[2.4rem] leading-[1.05] tracking-tight sm:text-[3.4rem]">
+            {pitch.title} <span className="italic text-accent">{pitch.accent}</span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">{profile.intro}</p>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">{pitch.text}</p>
           <div className="mt-8 flex flex-wrap gap-3 text-sm">
+            <a href="/play/frontdesk" className="rounded-full bg-accent px-5 py-2.5 font-medium text-white hover:opacity-90">
+              Try the live demo
+            </a>
             <a
-              href={`mailto:${profile.email}`}
-              className="rounded-full bg-accent px-5 py-2.5 font-medium text-white hover:opacity-90"
+              href={`mailto:${profile.email}?subject=Project enquiry`}
+              className="rounded-full border border-line bg-card px-5 py-2.5 hover:border-accent"
             >
               Get in touch
             </a>
-            <Link href="/services" className="rounded-full border border-line bg-card px-5 py-2.5 hover:border-accent">
-              Work with me
-            </Link>
           </div>
+          <p className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            {pitch.niches.map((n) => (
+              <Link key={n.href} href={n.href} className="group font-medium text-accent">
+                {n.name} <Arrow />
+              </Link>
+            ))}
+          </p>
         </div>
         <HeroArt className="mx-auto w-full max-w-[22rem] md:max-w-none" />
       </section>

@@ -22,7 +22,7 @@ export default function Work() {
   return (
     <>
       <PageIntro title="Work" art={<WorkMotif className="h-full w-full" />}>
-        One product in beta, three LLM apps you can try right here, and the computer vision projects behind them.
+        One product in beta, four AI apps you can try right here, and the computer vision projects behind them.
       </PageIntro>
 
       <section id="unstuck" className="scroll-mt-8 border-t border-line py-16">

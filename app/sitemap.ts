@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE = "https://adjetei-martey.vercel.app";
+const BASE = "https://www.adjetei.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages: [string, number][] = [
@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/automate-invoice-data-entry", 0.9],
     ["/work", 0.8],
     ["/about", 0.6],
+    ["/hire", 0.5],
     ["/play/frontdesk", 0.7],
     ["/play/docuchat", 0.6],
     ["/play/extractly", 0.6],

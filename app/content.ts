@@ -12,9 +12,42 @@ export const profile = {
   headline: "I build AI products that people actually use.",
   intro:
     "Software engineer with an MSc in Artificial Intelligence (Distinction). Since 2019 I've shipped production software, from recommendation models on live customer data to LLM apps with retrieval, tool-calling agents and structured extraction.",
-  // Shown as a badge on the home page and on /services.
-  availability: "Open to roles & freelance · remote, worldwide",
+  // Shown as a badge on the home page and on /services (clients). Recruiters get /hire instead.
+  availability: "Taking on freelance projects · UK and remote",
+  hiring: "Open to AI / ML engineering roles · remote",
 };
+
+// Home hero: lead with the niche the landing pages serve.
+export const pitch = {
+  title: "AI that answers your enquiries and",
+  accent: "books your customers in.",
+  text: "For restaurants, salons and clinics: a host on your website or WhatsApp that answers questions day and night, books straight into your diary and hands the tricky ones to you. Built by an AI engineer with an MSc in AI and seven years shipping production software.",
+  niches: [
+    { name: "Restaurants", href: "/restaurant-booking-assistant" },
+    { name: "Salons and clinics", href: "/salon-clinic-booking-assistant" },
+    { name: "Invoice data entry", href: "/automate-invoice-data-entry" },
+  ],
+};
+
+// Short data note on /services and the landing pages. Only promises that hold for every build.
+export const privacy = [
+  {
+    title: "It runs on your accounts",
+    text: "The app, its database and the AI provider account are set up in your name, so your customers' data stays with you, and you keep everything if we stop working together.",
+  },
+  {
+    title: "Built for UK GDPR",
+    text: "It collects only what the job needs, keeps it for a set time, and you can export or delete it whenever you want.",
+  },
+  {
+    title: "Not used to train AI",
+    text: "I build on business AI services (such as Anthropic's and OpenAI's APIs) that don't train their models on your data by default.",
+  },
+  {
+    title: "UK or EU hosting",
+    text: "Where a provider offers a UK or EU region, your data is stored there.",
+  },
+];
 
 // Freelance offer on /services. `proof` names a project on the Work page that
 // shows the service working; keep every line backed by something real.

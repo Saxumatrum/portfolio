@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { profile, services, steps } from "../content";
-import { Arrow, AvailabilityBadge, ContactCta, SectionTitle } from "../ui";
+import { Arrow, AvailabilityBadge, ContactCta, PrivacyNote, SectionTitle } from "../ui";
 import { ServicesMotif } from "../art";
 
 export const metadata: Metadata = {
@@ -70,6 +70,8 @@ export default function Services() {
           Pricing depends on what you need, so we&apos;ll agree it on the call before any work starts.
         </p>
       </section>
+
+      <PrivacyNote />
 
       <ContactCta />
     </>

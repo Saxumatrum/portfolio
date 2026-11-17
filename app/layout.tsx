@@ -16,10 +16,10 @@ const newsreader = Newsreader({
   style: ["normal", "italic"],
 });
 
-const SITE = "https://adjetei-martey.vercel.app";
+const SITE = "https://www.adjetei.com";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://adjetei-martey.vercel.app"),
+  metadataBase: new URL("https://www.adjetei.com"),
   title: "Adjetei Martey — Freelance AI Developer, UK and Remote",
   description:
     "Freelance AI developer (MSc AI) based in London, working with businesses across the UK and worldwide. Booking and enquiry assistants, chat-with-your-documents, automated data entry and custom AI products. Live demos you can try.",

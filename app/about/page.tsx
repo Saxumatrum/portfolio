@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { education, experience, profile, skills } from "../content";
-import { ContactCta, PageIntro, SectionTitle } from "../ui";
+import { education, profile, skills } from "../content";
+import { ContactCta, ExperienceList, PageIntro, SectionTitle } from "../ui";
 import { AboutMotif } from "../art";
 
 export const metadata: Metadata = {
@@ -16,23 +16,7 @@ export default function About() {
 
       <section className="border-t border-line py-16">
         <SectionTitle>Experience</SectionTitle>
-        <ol className="mt-8 space-y-10">
-          {experience.map((e) => (
-            <li key={e.role} className="grid gap-2 sm:grid-cols-[9rem_1fr] sm:gap-8">
-              <p className="text-sm text-muted">{e.period}</p>
-              <div>
-                <h3 className="font-medium">
-                  {e.role} <span className="text-muted">· {e.org}</span>
-                </h3>
-                <ul className="mt-3 space-y-2 text-[15px] leading-relaxed text-muted">
-                  {e.points.map((pt) => (
-                    <li key={pt}>{pt}</li>
-                  ))}
-                </ul>
-              </div>
-            </li>
-          ))}
-        </ol>
+        <ExperienceList />
         <a href={profile.cv} className="mt-10 inline-block rounded-full border border-line px-5 py-2.5 text-sm hover:border-foreground">
           Download CV
         </a>

@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { profile } from "./content";
-import { Arrow, ContactCta, SectionTitle } from "./ui";
+import { Arrow, ContactCta, PrivacyNote, SectionTitle } from "./ui";
 
-const SITE = "https://adjetei-martey.vercel.app";
+const SITE = "https://www.adjetei.com";
 
 /** Everything a search landing page says. Keep every line backed by a real demo or offer.md. */
 export type Landing = {
@@ -114,6 +114,8 @@ export function LandingPage({ l }: { l: Landing }) {
           ))}
         </div>
       </section>
+
+      <PrivacyNote />
 
       <ContactCta />
     </>

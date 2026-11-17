@@ -45,7 +45,7 @@ export default async function OpengraphImage() {
           <div style={{ marginTop: 28, fontSize: 38, color: "#74625A" }}>{profile.headline}</div>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 28 }}>
-          <div style={{ color: "#B9481F" }}>adjetei-martey.vercel.app</div>
+          <div style={{ color: "#B9481F" }}>adjetei.com</div>
           <div style={{ display: "flex", gap: 14, color: "#74625A" }}>
             <span>LLM apps</span>
             <span>·</span>

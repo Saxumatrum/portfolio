@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { featured, profile, projects } from "./content";
+import { experience, featured, privacy, profile, projects } from "./content";
 
 export function SectionTitle({ children }: { children: React.ReactNode }) {
   return <h2 className="text-xs font-medium uppercase tracking-[0.18em] text-muted">{children}</h2>;
@@ -120,30 +120,73 @@ export function ResearchList({ items }: { items: (typeof projects)[number][] }) 
   );
 }
 
-export function AvailabilityBadge() {
+export function AvailabilityBadge({ hiring = false }: { hiring?: boolean }) {
   return (
     <p className="inline-flex items-center gap-2 rounded-full border border-line px-3 py-1 text-xs text-muted">
       <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-accent" />
-      {profile.availability}
+      {hiring ? profile.hiring : profile.availability}
     </p>
   );
 }
 
-export function ContactCta() {
+export function ContactCta({ hiring = false }: { hiring?: boolean }) {
   return (
     <section className="my-16 rounded-3xl bg-sand px-6 py-14 sm:px-12">
       <h2 className="font-serif text-4xl leading-tight sm:text-5xl">
-        Hiring, or have a project in mind?
+        {hiring ? "Hiring an AI engineer?" : "Have a project in mind?"}
         <br />
         <span className="italic text-muted">Let&apos;s talk.</span>
       </h2>
       <p className="mt-5 max-w-lg leading-relaxed text-muted">
-        Tell me what you&apos;re trying to do and we&apos;ll set up a free call to talk it through, including cost.
+        {hiring
+          ? "Send me the role and I'll come back to you quickly. My CV has the full detail."
+          : "Tell me what you're trying to do and we'll set up a free call to talk it through, including cost."}
       </p>
-      <a href={`mailto:${profile.email}`} className="group mt-6 inline-flex items-center gap-2 text-lg text-accent">
+      <a
+        href={`mailto:${profile.email}${hiring ? "?subject=Role" : ""}`}
+        className="group mt-6 inline-flex items-center gap-2 text-lg text-accent"
+      >
         {profile.email} <Arrow />
       </a>
     </section>
+  );
+}
+
+export function PrivacyNote() {
+  return (
+    <section className="border-t border-line py-16">
+      <SectionTitle>Your data</SectionTitle>
+      <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2">
+        {privacy.map((p) => (
+          <div key={p.title}>
+            <h3 className="font-medium">{p.title}</h3>
+            <p className="mt-1 text-[15px] leading-relaxed text-muted">{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function ExperienceList() {
+  return (
+    <ol className="mt-8 space-y-10">
+      {experience.map((e) => (
+        <li key={e.role} className="grid gap-2 sm:grid-cols-[9rem_1fr] sm:gap-8">
+          <p className="text-sm text-muted">{e.period}</p>
+          <div>
+            <h3 className="font-medium">
+              {e.role} <span className="text-muted">· {e.org}</span>
+            </h3>
+            <ul className="mt-3 space-y-2 text-[15px] leading-relaxed text-muted">
+              {e.points.map((pt) => (
+                <li key={pt}>{pt}</li>
+              ))}
+            </ul>
+          </div>
+        </li>
+      ))}
+    </ol>
   );
 }
 
