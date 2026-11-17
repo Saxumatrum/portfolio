@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
-/* Warm palette: cream paper, ink-brown text, terracotta accent. The art-*
+/* Warm palette: bright warm-white paper, ink-brown text, terracotta accent. The art-*
    tones are only for illustrations and soft fills, never body text. */
 :root {
-  --background: #fbf5ec;
+  --background: #fffdfa;
   --foreground: #2b1d16;
   --muted: #74625a;
-  --line: #ead9c6;
-  --card: #fffaf3;
+  --line: #f1e7dc;
+  --card: #ffffff;
   --accent: #b9481f;
   --art-sun: #f0a63a;
   --art-rose: #e8846a;
   --art-clay: #c65a32;
   --art-sage: #8f9d6c;
   --art-plum: #6e3b4e;
-  --art-sand: #f3dcc0;
+  --art-sand: #faf0e4;
 }
 
 @media (prefers-color-scheme: dark) {
