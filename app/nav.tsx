@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { profile } from "./content";
+import { ThemeToggle } from "./theme";
 
 const links = [
   { href: "/work", label: "Work" },
@@ -13,11 +14,11 @@ const links = [
 export function SiteHeader() {
   const path = usePathname();
   return (
-    <header className="flex items-center justify-between py-6">
+    <header className="flex items-center justify-between gap-4 py-6">
       <Link href="/" className="font-serif text-lg">
         {profile.name}
       </Link>
-      <nav className="flex gap-4 text-sm text-muted sm:gap-5">
+      <nav className="flex items-center gap-3 text-sm text-muted sm:gap-5">
         {links.map((l) => {
           const active = path === l.href || path.startsWith(`${l.href}/`);
           return (
@@ -34,6 +35,7 @@ export function SiteHeader() {
         <a href={profile.cv} className="hover:text-foreground">
           CV
         </a>
+        <ThemeToggle />
       </nav>
     </header>
   );

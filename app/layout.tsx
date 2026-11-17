@@ -3,6 +3,7 @@ import { Inter, Newsreader } from "next/font/google";
 import "./globals.css";
 import { profile, services } from "./content";
 import { SiteHeader } from "./nav";
+import { themeScript } from "./theme";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -71,7 +72,10 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className={`${inter.variable} ${newsreader.variable} antialiased`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
