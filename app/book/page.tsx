@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Book a Free Call — Adjetei Martey",
   alternates: { canonical: "/book" },
   description:
-    "Book a free 20-minute call about AI for your business: booking assistants, document assistants, automated data entry or a custom AI product.",
+    "Book a free 30-minute call about AI for your business: booking assistants, document assistants, automated data entry or a custom AI product.",
 };
 
 // Google Calendar appointment schedule, embedded. `gv=true` is Google's embeddable view of the booking page.
@@ -17,7 +17,7 @@ export default function Book() {
     <>
       <section className="pb-8 pt-14 sm:pt-20">
         <h1 className="font-serif text-[2.6rem] leading-[1.05] tracking-tight sm:text-5xl">
-          Book a free <span className="italic text-accent">20-minute call.</span>
+          Book a free <span className="italic text-accent">30-minute call.</span>
         </h1>
         <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
           Tell me what you&apos;re trying to do and I&apos;ll tell you honestly whether AI is the right fit, and roughly

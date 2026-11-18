@@ -151,7 +151,7 @@ export function ContactCta({ hiring = false }: { hiring?: boolean }) {
       {profile.booking && (
         <p className="mt-3">
           <Link href="/book" className="group text-[15px] text-muted hover:text-foreground">
-            or book a free 20-minute call <Arrow />
+            or book a free 30-minute call <Arrow />
           </Link>
         </p>
       )}
