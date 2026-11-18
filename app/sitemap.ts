@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { profile } from "./content";
 
 const BASE = "https://www.adjetei.com";
 
@@ -16,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/play/docuchat", 0.6],
     ["/play/extractly", 0.6],
     ["/play/triagepilot", 0.6],
+    ...(profile.booking ? [["/book", 0.8] as [string, number]] : []),
   ];
   return pages.map(([path, priority]) => ({
     url: BASE + path,

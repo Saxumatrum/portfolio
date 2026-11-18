@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { featured, profile, projects } from "../content";
-import { Arrow, AvailabilityBadge, ContactCta, ExperienceList, ResearchList, SectionTitle } from "../ui";
+import { Arrow, AvailabilityBadge, BookButton, ContactCta, ExperienceList, ResearchList, SectionTitle } from "../ui";
 
 // For recruiters and hiring managers. Linked from the CV and job applications, not from the
 // nav, so business visitors only ever see "taking on freelance projects".
@@ -35,6 +35,7 @@ export default function Hire() {
           >
             Email me
           </a>
+          <BookButton label="Book a call" />
         </div>
       </section>
 

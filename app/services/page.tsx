@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { profile, services, steps } from "../content";
-import { Arrow, AvailabilityBadge, ContactCta, PrivacyNote, SectionTitle } from "../ui";
+import { Arrow, AvailabilityBadge, BookButton, ContactCta, PrivacyNote, SectionTitle } from "../ui";
 import { ServicesMotif } from "../art";
 
 export const metadata: Metadata = {
@@ -24,12 +24,19 @@ export default function Services() {
           I design and build AI tools for teams that want the hours back, not a science project. Every service
           below has a working demo you can try before we talk.
         </p>
-        <a
-          href={`mailto:${profile.email}?subject=Project enquiry`}
-          className="mt-8 inline-block rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white hover:opacity-90"
-        >
-          Tell me about your project
-        </a>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <BookButton primary />
+          <a
+            href={`mailto:${profile.email}?subject=Project enquiry`}
+            className={
+              profile.booking
+                ? "inline-block rounded-full border border-line bg-card px-5 py-2.5 text-sm font-medium hover:border-accent"
+                : "inline-block rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white hover:opacity-90"
+            }
+          >
+            Tell me about your project
+          </a>
+        </div>
       </section>
 
       <section className="border-t border-line py-16">

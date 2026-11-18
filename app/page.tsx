@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { AboutMotif, HeroArt, ServicesMotif, WorkMotif } from "./art";
 import { experience, featured, pitch, profile, projects } from "./content";
-import { Arrow, AvailabilityBadge } from "./ui";
+import { Arrow, AvailabilityBadge, BookButton } from "./ui";
 
 // Home is a front door: who I am, then three ways in. Detail lives on the
 // other pages so this one never turns into a long scroll.
@@ -49,12 +49,16 @@ export default function Home() {
             <a href="/play/frontdesk" className="rounded-full bg-accent px-5 py-2.5 font-medium text-white hover:opacity-90">
               Try the live demo
             </a>
-            <a
-              href={`mailto:${profile.email}?subject=Project enquiry`}
-              className="rounded-full border border-line bg-card px-5 py-2.5 hover:border-accent"
-            >
-              Get in touch
-            </a>
+            {profile.booking ? (
+              <BookButton />
+            ) : (
+              <a
+                href={`mailto:${profile.email}?subject=Project enquiry`}
+                className="rounded-full border border-line bg-card px-5 py-2.5 hover:border-accent"
+              >
+                Get in touch
+              </a>
+            )}
           </div>
           <p className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm">
             {pitch.niches.map((n) => (

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { profile } from "./content";
-import { Arrow, ContactCta, PrivacyNote, SectionTitle } from "./ui";
+import { Arrow, BookButton, ContactCta, PrivacyNote, SectionTitle } from "./ui";
 
 const SITE = "https://www.adjetei.com";
 
@@ -68,6 +68,7 @@ export function LandingPage({ l }: { l: Landing }) {
           >
             {l.askLabel}
           </a>
+          <BookButton />
         </div>
       </section>
 

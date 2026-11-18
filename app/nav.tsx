@@ -35,6 +35,14 @@ export function SiteHeader() {
         <a href={profile.cv} className="hover:text-foreground">
           CV
         </a>
+        {profile.booking && (
+          <Link
+            href="/book"
+            className="hidden rounded-full bg-accent px-3.5 py-1.5 font-medium text-white hover:opacity-90 sm:inline-block"
+          >
+            Book a call
+          </Link>
+        )}
         <ThemeToggle />
       </nav>
     </header>

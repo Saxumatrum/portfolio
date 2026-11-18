@@ -148,7 +148,31 @@ export function ContactCta({ hiring = false }: { hiring?: boolean }) {
       >
         {profile.email} <Arrow />
       </a>
+      {profile.booking && (
+        <p className="mt-3">
+          <Link href="/book" className="group text-[15px] text-muted hover:text-foreground">
+            or book a free 20-minute call <Arrow />
+          </Link>
+        </p>
+      )}
     </section>
+  );
+}
+
+/** "Book a free call" button to /book. Renders nothing until profile.booking is set. */
+export function BookButton({ primary = false, label = "Book a free call" }: { primary?: boolean; label?: string }) {
+  if (!profile.booking) return null;
+  return (
+    <Link
+      href="/book"
+      className={
+        primary
+          ? "inline-block rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white hover:opacity-90"
+          : "inline-block rounded-full border border-line bg-card px-5 py-2.5 text-sm font-medium hover:border-accent"
+      }
+    >
+      {label}
+    </Link>
   );
 }
 

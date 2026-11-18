@@ -7,6 +7,8 @@ export const profile = {
   role: "AI Engineer",
   location: "London",
   email: "hello@adjetei.com",
+  // Google Calendar appointment schedule (adjetei@ calendar): Share -> copy link. Empty = no booking buttons, no /book.
+  booking: "",
   github: "https://github.com/saxumatrum",
   cv: "/adjetei-martey-cv.pdf",
   headline: "I build AI products that people actually use.",
