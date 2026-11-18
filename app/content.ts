@@ -6,7 +6,7 @@ export const profile = {
   name: "Adjetei Martey",
   role: "AI Engineer",
   location: "London",
-  email: "adjeteimartey@gmail.com",
+  email: "hello@adjetei.com",
   github: "https://github.com/saxumatrum",
   cv: "/adjetei-martey-cv.pdf",
   headline: "I build AI products that people actually use.",
