@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import { profile } from "./content";
+import { LOGO_SVG } from "./logo";
 
 // The preview card shown when the site's link is shared (LinkedIn, Slack,
 // WhatsApp, X...). Rendered once at build time.
@@ -35,7 +36,9 @@ export default async function OpengraphImage() {
           fontFamily: "Inter",
         }}
       >
-        <div style={{ display: "flex", fontSize: 28, color: "#74625A" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 22, fontSize: 28, color: "#74625A" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={`data:image/svg+xml;utf8,${encodeURIComponent(LOGO_SVG)}`} width={64} height={64} alt="" />
           {profile.role} · {profile.location}
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { profile } from "./content";
 import { ThemeToggle } from "./theme";
+import { Logo } from "./logo";
 
 const links = [
   { href: "/work", label: "Work" },
@@ -15,8 +16,9 @@ export function SiteHeader() {
   const path = usePathname();
   return (
     <header className="flex items-center justify-between gap-4 py-6">
-      <Link href="/" className="font-serif text-lg">
-        {profile.name}
+      <Link href="/" className="flex shrink-0 items-center gap-2.5 font-serif text-lg">
+        <Logo className="h-7 w-7" />
+        <span className="sr-only min-[440px]:not-sr-only">{profile.name}</span>
       </Link>
       <nav className="flex items-center gap-3 text-sm text-muted sm:gap-5">
         {links.map((l) => {
