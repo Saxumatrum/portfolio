@@ -28,9 +28,9 @@ const l: Landing = {
     "Shows you every booking and hand-off, and what it looked up to answer each question.",
   ],
   demo: {
-    href: "/play/frontdesk",
-    label: "Open the FrontDesk demo",
-    text: "FrontDesk is a working demo set up for a made-up restaurant, but it's the same assistant: swap the menu for your treatment list and tables for appointment slots. Ask it a question, make a booking, or ask for something it shouldn't handle and watch it pass you to a person. The owner's view shows each booking and every step the AI took.",
+    href: "/play/frontdesk/salon",
+    label: "Open the salon and clinic demo",
+    text: "The demo is set up for Willow Room, a made-up hair, beauty and skin clinic with four team members. Ask for a cut with a particular stylist, book a colour and watch it check for a patch test, ask for microneedling and see it offer a consultation first, or ask a pregnancy question and watch it pass you to the nurse instead of guessing. The owner's view shows each appointment and every step the AI took.",
   },
   faqs: [
     [

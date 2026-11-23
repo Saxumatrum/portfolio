@@ -23,10 +23,11 @@ export const profile = {
 export const pitch = {
   title: "AI that answers your enquiries and",
   accent: "books your customers in.",
-  text: "For restaurants, salons and clinics: a host on your website or WhatsApp that answers questions day and night, books straight into your diary and hands the tricky ones to you. Built by an AI engineer with an MSc in AI and seven years shipping production software.",
+  text: "For restaurants, salons, clinics and trades: an assistant on your website or WhatsApp that answers questions day and night, books straight into your diary and hands the tricky ones to you. Built by an AI engineer with an MSc in AI and seven years shipping production software.",
   niches: [
     { name: "Restaurants", href: "/restaurant-booking-assistant" },
     { name: "Salons and clinics", href: "/salon-clinic-booking-assistant" },
+    { name: "Trades", href: "/trades-booking-assistant" },
     { name: "Invoice data entry", href: "/automate-invoice-data-entry" },
   ],
 };
@@ -57,11 +58,12 @@ export const services = [
   {
     title: "Bookings and enquiries on autopilot",
     pitch:
-      "A host on your website or WhatsApp that answers menu, price and opening-hours questions, books tables or appointments into your diary, and passes anything unusual to you with a one-line summary.",
+      "An assistant on your website or WhatsApp that answers menu, price and opening-hours questions, books tables, appointments or visits into your diary, and passes anything unusual to you with a one-line summary.",
     proof: { name: "FrontDesk", href: "/play/frontdesk" },
     more: [
       { name: "For restaurants", href: "/restaurant-booking-assistant" },
       { name: "For salons and clinics", href: "/salon-clinic-booking-assistant" },
+      { name: "For trades", href: "/trades-booking-assistant" },
     ],
   },
   {
@@ -135,9 +137,9 @@ export const projects: {
   {
     name: "FrontDesk",
     kind: "Booking agent",
-    forBusiness: "Answers your guests' questions and takes bookings day and night, and hands the tricky ones to you.",
+    forBusiness: "Answers your customers' questions and takes bookings day and night, and hands the tricky ones to you.",
     summary:
-      "An AI host for a demo restaurant. It looks up the menu and allergens, checks free tables, books only after the guest confirms, and hands big groups, private hire and complaints to staff. The owner's view shows bookings, hand-offs and every tool call.",
+      "An AI front desk with three demo businesses, each with its own data, rules and tools: a restaurant (menu, allergens, tables), a salon and skin clinic (team diary, patch tests, consultations, health questions to the nurse) and a plumbing firm (postcode checks, visit windows, fixed prices, gas emergencies escalated). It books only after the customer confirms, and the owner's view shows bookings, hand-offs and every tool call.",
     stack: ["AI SDK", "Tool calling", "Next.js"],
     repo: "https://github.com/saxumatrum/frontdesk",
     demo: "/play/frontdesk",

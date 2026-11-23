@@ -7,7 +7,7 @@ import { ServicesMotif } from "../art";
 export const metadata: Metadata = {
   title: "AI Services for Small Businesses — Adjetei Martey",
   description:
-    "Freelance AI development for businesses in the UK and worldwide: booking and enquiry assistants for restaurants, salons and clinics, chat-with-your-documents, automated data entry, support triage and custom AI apps. Free call to start.",
+    "Freelance AI development for businesses in the UK and worldwide: booking and enquiry assistants for restaurants, salons, clinics and trades, chat-with-your-documents, automated data entry, support triage and custom AI apps. Free call to start.",
   alternates: { canonical: "/services" },
 };
 
