@@ -214,9 +214,8 @@ export const experience = [
     org: "Rumate",
     period: "Apr 2026 – now",
     points: [
-      "Own data, scoring and ML at a startup that rates Toronto rental buildings",
-      "Built the Toronto Open Data pipeline that keeps 3,000+ buildings and their inspection history up to date",
-      "Built the People's Score: five public sources per building, with Claude and Qwen classifying reviews to discount solicited praise. Its first run scored 100 buildings across a city ward",
+      "Look after data, scoring and ML at an early-stage startup that rates rental buildings",
+      "Built the pipelines that pull public building records and reviews into its scores",
     ],
   },
   {
