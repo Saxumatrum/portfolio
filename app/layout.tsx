@@ -3,7 +3,6 @@ import { Inter, Newsreader } from "next/font/google";
 import "./globals.css";
 import { profile, services } from "./content";
 import { SiteHeader } from "./nav";
-import { themeScript } from "./theme";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -74,7 +73,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script dangerouslySetInnerHTML={{ __html: `try{localStorage.setItem("theme","light")}catch(e){}` }} />
       </head>
       <body className={`${inter.variable} ${newsreader.variable} antialiased`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

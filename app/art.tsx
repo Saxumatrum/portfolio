@@ -1,5 +1,5 @@
 // Original decorative illustrations, drawn as inline SVG so they pick up the
-// theme colours (and dark mode) from globals.css. All are aria-hidden.
+// theme colours from globals.css. All are aria-hidden.
 
 const v = (name: string) => `var(--art-${name})`;
 

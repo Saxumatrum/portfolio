@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { profile } from "./content";
-import { ThemeToggle } from "./theme";
 import { Logo } from "./logo";
 
 const links = [
@@ -45,7 +44,6 @@ export function SiteHeader() {
             Book a call
           </Link>
         )}
-        <ThemeToggle />
       </nav>
     </header>
   );

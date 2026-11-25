@@ -82,14 +82,15 @@ export function ProjectCard({ p }: { p: (typeof projects)[number] }) {
           <Chips items={p.stack} />
         </div>
         <div className="mt-5 flex items-center gap-5 text-sm">
-          {p.demo && (
+          {p.demo ? (
             <a href={p.demo} className="group font-medium text-accent">
               Try it live <Arrow />
             </a>
+          ) : (
+            <a href={p.repo} className="group text-accent">
+              GitHub <Arrow />
+            </a>
           )}
-          <a href={p.repo} className={p.demo ? "group text-muted hover:text-foreground" : "group text-accent"}>
-            GitHub <Arrow />
-          </a>
         </div>
       </div>
     </div>
